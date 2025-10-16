@@ -2,7 +2,7 @@ from google.oauth2 import service_account
 from googleapiclient.discovery import build
 
 SCOPES = ['https://www.googleapis.com/auth/calendar']
-SERVICE_ACCOUNT_FILE = 'D:\Desktop\SELENIUM LINK\gen-lang-client-0924156087-40c7a44cceb3.json'  # <-- Replace with your file name
+SERVICE_ACCOUNT_FILE = '.json'  # <-- Replace with your file name
 
 credentials = service_account.Credentials.from_service_account_file(
     SERVICE_ACCOUNT_FILE, scopes=SCOPES)
@@ -23,4 +23,5 @@ event = {
 }
 
 event_result = service.events().insert(calendarId='primary', body=event).execute()
+
 print(f"✅ Event created: {event_result.get('htmlLink')}")
