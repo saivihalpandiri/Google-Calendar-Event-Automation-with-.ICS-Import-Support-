@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 import pytz
 
 # Path to your service account key
-SERVICE_ACCOUNT_FILE = r'D:\Desktop\SELENIUM LINK\gen-lang-client-0924156087-40c7a44cceb3.json'
+SERVICE_ACCOUNT_FILE = r'.json'
 
 # Your calendar ID (can be your email or primary)
 CALENDAR_ID = 'saivihal042@gmail.com'  # or use 'primary'
@@ -47,3 +47,4 @@ event = {
 event_result = service.events().insert(calendarId=CALENDAR_ID, body=event).execute()
 
 print(f"Event created: {event_result.get('htmlLink')}")
+
