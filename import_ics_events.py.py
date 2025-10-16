@@ -4,7 +4,7 @@ from googleapiclient.discovery import build
 import pytz
 
 # Path to your service account key
-SERVICE_ACCOUNT_FILE = r'D:\Desktop\SELENIUM LINK\gen-lang-client-0924156087-40c7a44cceb3.json'
+SERVICE_ACCOUNT_FILE = r'.json' # <-- Replace with your file name
 SCOPES = ['https://www.googleapis.com/auth/calendar']
 CALENDAR_ID = 'primary'  # or your Gmail if you use a shared calendar
 
@@ -41,3 +41,4 @@ for component in cal.walk():
         # Insert event
         created_event = service.events().insert(calendarId=CALENDAR_ID, body=event).execute()
         print("✅ Event created:", created_event.get('htmlLink'))
+
